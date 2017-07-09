@@ -10,6 +10,14 @@
 
   <body>
     <%= render 'shared/header' %>
-    <%= yield %>
+    <%= render 'shared/paralax' %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= render 'shared/subscriber' %>
+    <%= render 'shared/social_line' %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
