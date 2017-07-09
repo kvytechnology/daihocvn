@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ @font-face {
+   font-family: 'Garamond';
+   src: asset-url('EBGaramond08-Regular.ttf');
+ }
+
+.navbar-brand {
+  font-family: 'Garamond';
+  font-size: 25px !important;
+  font-weight: lighter !important;
+  color: black !important;
+}
