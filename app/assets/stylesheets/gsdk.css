@@ -2154,7 +2154,7 @@ input.ct-red + span + label + span.switch-right {
   font-weight: normal;
 }
 .footer nav > ul a:not(.btn) {
-  color: #9A9A9A;
+  color: black;
   display: block;
   margin-bottom: 3px;
 }
@@ -2191,7 +2191,7 @@ input.ct-red + span + label + span.switch-right {
   border-color: #DDDDDD;
 }
 .footer .title {
-  color: #777777;
+  color: black;
 }
 
 .footer:not(.footer-big) nav > ul {
