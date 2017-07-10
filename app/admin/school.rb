@@ -1,12 +1,15 @@
 ActiveAdmin.register School do
-  permit_params :name, :location, :description, :website_url, :logo,
+  permit_params :name, :location, :description, :website_url, :logo, :type,
     logo_attributes: [:_destroy],
     photos_attributes: [:attachment, :owner_id, :owner_type, :_destroy, :_create, :_update]
 
   index do
     selectable_column
     id_column
+    column :name
     column 'Logo', sortable: :logo_file_name do |firmware| link_to firmware.logo_file_name, firmware.logo.url end
+    column :location
+    column :type
     column :created_at
     actions
   end
@@ -15,6 +18,7 @@ ActiveAdmin.register School do
     f.inputs "New School" do
       f.input :name
       f.input :location
+      f.input :type, as: :select, collection: School::TYPES, allow_blank: false, include_blank: false
       f.input :description
       f.input :website_url
       f.input :logo, hint: f.school.logo? ? image_tag(f.school.logo.url(:medium)) : content_tag(:span, "Upload JPG/PNG/GIF image")
