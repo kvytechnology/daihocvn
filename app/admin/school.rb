@@ -1,5 +1,5 @@
 ActiveAdmin.register School do
-  permit_params :name, :location, :description, :website_url, :logo, :type,
+  permit_params :name, :location, :description, :website_url, :logo,
     logo_attributes: [:_destroy],
     photos_attributes: [:attachment, :owner_id, :owner_type, :_destroy, :_create, :_update]
 
@@ -18,8 +18,7 @@ ActiveAdmin.register School do
     f.inputs "New School" do
       f.input :name
       f.input :location
-      f.input :type, as: :select, collection: School::TYPES, allow_blank: false, include_blank: false
-      f.input :description
+      f.input :description, as: :ckeditor
       f.input :website_url
       f.input :logo, hint: f.school.logo? ? image_tag(f.school.logo.url(:medium)) : content_tag(:span, "Upload JPG/PNG/GIF image")
       if f.object.logo.present?
